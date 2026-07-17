@@ -14,7 +14,9 @@ function SearchCard() {
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
   const [journeyDate, setJourneyDate] = useState(today);
-  const [travelClass, setTravelClass] = useState("Sleeper (SL)");
+
+  // Store only the class code
+  const [travelClass, setTravelClass] = useState("SL");
 
   const handleSearch = () => {
     if (!from.trim() || !to.trim()) {
@@ -67,11 +69,11 @@ function SearchCard() {
                 onChange={(e) => setTravelClass(e.target.value)}
                 className="rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-200"
               >
-                <option>Sleeper (SL)</option>
-                <option>3A</option>
-                <option>2A</option>
-                <option>1A</option>
-                <option>Chair Car (CC)</option>
+                <option value="SL">Sleeper (SL)</option>
+                <option value="3A">Third AC (3A)</option>
+                <option value="2A">Second AC (2A)</option>
+                <option value="1A">First AC (1A)</option>
+                <option value="CC">Chair Car (CC)</option>
               </select>
             </div>
 
