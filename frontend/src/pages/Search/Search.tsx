@@ -4,6 +4,19 @@ import SearchForm from "../../components/search/SearchForm";
 import TrainCard from "../../components/train/TrainCard";
 import { trains } from "../../data/trains";
 
+function normalizeStationName(value: string) {
+  return value
+    .toLowerCase()
+    .replace(/\bjunction\b/g, "")
+    .replace(/\bjn\b/g, "")
+    .replace(/\bterminal\b/g, "")
+    .replace(/\bterminus\b/g, "")
+    .replace(/\bcentral\b/g, "")
+    .replace(/\bcantt\b/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function Search() {
   const [searchParams] = useSearchParams();
 
@@ -12,10 +25,16 @@ function Search() {
   const date = searchParams.get("date") ?? "";
   const travelClass = searchParams.get("class") ?? "";
 
+  const searchFrom = normalizeStationName(from);
+  const searchTo = normalizeStationName(to);
+
   const filteredTrains = trains.filter((train) => {
+    const trainFrom = normalizeStationName(train.from);
+    const trainTo = normalizeStationName(train.to);
+
     const routeMatches =
-      train.from.toLowerCase() === from.toLowerCase() &&
-      train.to.toLowerCase() === to.toLowerCase();
+      trainFrom === searchFrom &&
+      trainTo === searchTo;
 
     if (!travelClass) {
       return routeMatches;
