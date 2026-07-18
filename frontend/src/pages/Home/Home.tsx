@@ -1,13 +1,15 @@
 import Hero from "../../components/home/Hero";
-import SearchCard from "../../components/home/SearchCard";
+import SearchForm from "../../components/search/SearchForm";
 import PopularRoutes from "../../components/home/PopularRoutes";
+import Features from "../../components/home/Features";
 
 function Home() {
   return (
     <>
       <Hero />
-      <SearchCard />
+      <SearchForm />
       <PopularRoutes />
+      <Features />
     </>
   );
 }

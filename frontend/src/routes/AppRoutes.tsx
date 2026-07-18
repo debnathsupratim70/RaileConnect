@@ -7,6 +7,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Search from "../pages/Search/Search";
 import PNR from "../pages/PNR/PNR";
+import TrainDetails from "../pages/Train/TrainDetails";
 
 function AppRoutes() {
   return (
@@ -15,6 +16,7 @@ function AppRoutes() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/train/:trainNumber" element={<TrainDetails />} />
           <Route path="/pnr" element={<PNR />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
