@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import Button from "../common/Button";
 import JourneyInfo from "./JourneyInfo";
 import AvailabilityBadge from "./AvailabilityBadge";
@@ -9,8 +11,24 @@ interface TrainCardProps {
 }
 
 function TrainCard({ train }: TrainCardProps) {
+  const navigate = useNavigate();
+
+  const handleViewDetails = () => {
+    navigate(`/train/${train.trainNumber}`);
+  };
+
+  const handleBookNow = (event: React.MouseEvent) => {
+    event.stopPropagation();
+
+    // Booking flow will be implemented later.
+    navigate(`/train/${train.trainNumber}`);
+  };
+
   return (
-    <div className="mb-6 rounded-2xl bg-white p-6 shadow-md transition hover:shadow-xl">
+    <div
+      onClick={handleViewDetails}
+      className="mb-6 cursor-pointer rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+    >
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
@@ -58,7 +76,7 @@ function TrainCard({ train }: TrainCardProps) {
               className="rounded-xl border border-slate-200 p-4 transition hover:border-blue-500"
             >
               <div className="mb-3 flex items-center justify-between">
-                <h4 className="font-bold text-lg">
+                <h4 className="text-lg font-bold">
                   {coach.code}
                 </h4>
 
@@ -78,11 +96,17 @@ function TrainCard({ train }: TrainCardProps) {
 
       {/* Footer */}
       <div className="mt-8 flex justify-end gap-3">
-        <Button variant="secondary">
-          View Seats
+        <Button
+          variant="secondary"
+          onClick={(event) => {
+            event.stopPropagation();
+            handleViewDetails();
+          }}
+        >
+          View Details
         </Button>
 
-        <Button>
+        <Button onClick={handleBookNow}>
           Book Now
         </Button>
       </div>
