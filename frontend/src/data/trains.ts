@@ -22,18 +22,21 @@ export const trains: Train[] = [
     classes: [
       {
         code: "3A",
+        name: "AC 3 Tier",
         fare: 3150,
         status: "AVAILABLE",
         available: 24,
       },
       {
         code: "2A",
+        name: "AC 2 Tier",
         fare: 4520,
         status: "AVAILABLE",
         available: 8,
       },
       {
         code: "1A",
+        name: "First AC",
         fare: 6825,
         status: "WL",
         available: 2,
@@ -62,24 +65,28 @@ export const trains: Train[] = [
     classes: [
       {
         code: "SL",
+        name: "Sleeper",
         fare: 720,
         status: "AVAILABLE",
         available: 96,
       },
       {
         code: "3A",
+        name: "AC 3 Tier",
         fare: 1980,
         status: "AVAILABLE",
         available: 38,
       },
       {
         code: "2A",
+        name: "AC 2 Tier",
         fare: 2860,
         status: "RAC",
         available: 5,
       },
       {
         code: "1A",
+        name: "First AC",
         fare: 4890,
         status: "WL",
         available: 4,
@@ -108,18 +115,21 @@ export const trains: Train[] = [
     classes: [
       {
         code: "3A",
+        name: "AC 3 Tier",
         fare: 3010,
         status: "AVAILABLE",
         available: 12,
       },
       {
         code: "2A",
+        name: "AC 2 Tier",
         fare: 4300,
         status: "AVAILABLE",
         available: 6,
       },
       {
         code: "1A",
+        name: "First AC",
         fare: 6400,
         status: "AVAILABLE",
         available: 1,
@@ -148,18 +158,21 @@ export const trains: Train[] = [
     classes: [
       {
         code: "3A",
+        name: "AC 3 Tier",
         fare: 3120,
         status: "AVAILABLE",
         available: 20,
       },
       {
         code: "2A",
+        name: "AC 2 Tier",
         fare: 4470,
         status: "AVAILABLE",
         available: 7,
       },
       {
         code: "1A",
+        name: "First AC",
         fare: 6780,
         status: "RAC",
         available: 1,
@@ -188,18 +201,21 @@ export const trains: Train[] = [
     classes: [
       {
         code: "SL",
+        name: "Sleeper",
         fare: 840,
         status: "AVAILABLE",
         available: 75,
       },
       {
         code: "3A",
+        name: "AC 3 Tier",
         fare: 2250,
         status: "AVAILABLE",
         available: 28,
       },
       {
         code: "2A",
+        name: "AC 2 Tier",
         fare: 3230,
         status: "AVAILABLE",
         available: 9,
@@ -228,18 +244,21 @@ export const trains: Train[] = [
     classes: [
       {
         code: "SL",
+        name: "Sleeper",
         fare: 810,
         status: "AVAILABLE",
         available: 42,
       },
       {
         code: "3A",
+        name: "AC 3 Tier",
         fare: 2140,
         status: "RAC",
         available: 4,
       },
       {
         code: "2A",
+        name: "AC 2 Tier",
         fare: 3090,
         status: "WL",
         available: 6,

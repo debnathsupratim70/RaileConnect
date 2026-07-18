@@ -1,7 +1,11 @@
 export interface TrainClass {
   code: string;
+  name: string;
+
   fare: number;
+
   status: "AVAILABLE" | "RAC" | "WL";
+
   available: number;
 }
 
@@ -20,6 +24,7 @@ export interface Train {
 
   departure: string;
   arrival: string;
+
   duration: string;
 
   days: string[];

@@ -8,6 +8,7 @@ import Register from "../pages/Register/Register";
 import Search from "../pages/Search/Search";
 import PNR from "../pages/PNR/PNR";
 import TrainDetails from "../pages/Train/TrainDetails";
+import BookingPage from "../pages/Booking/BookingPage";
 
 function AppRoutes() {
   return (
@@ -15,10 +16,23 @@ function AppRoutes() {
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
+
           <Route path="/search" element={<Search />} />
-          <Route path="/train/:trainNumber" element={<TrainDetails />} />
+
+          <Route
+            path="/train/:trainNumber"
+            element={<TrainDetails />}
+          />
+
+          <Route
+            path="/booking/:trainNumber"
+            element={<BookingPage />}
+          />
+
           <Route path="/pnr" element={<PNR />} />
+
           <Route path="/login" element={<Login />} />
+
           <Route path="/register" element={<Register />} />
         </Route>
       </Routes>

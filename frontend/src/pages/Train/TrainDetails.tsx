@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import TrainHeader from "../../components/train/TrainHeader";
 import RouteTimeline from "../../components/train/RouteTimeline";
 import RunningDays from "../../components/train/RunningDays";
+import ClassCard from "../../components/train/ClassCard";
 
 import { trains } from "../../data/trains";
 
@@ -36,6 +37,21 @@ function TrainDetails() {
       <RouteTimeline train={train} />
 
       <RunningDays days={train.days} />
+
+      <section className="rounded-2xl bg-white p-8 shadow-md">
+        <h2 className="mb-6 text-2xl font-bold text-slate-800">
+          Available Classes
+        </h2>
+
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {train.classes.map((trainClass) => (
+            <ClassCard
+              key={trainClass.code}
+              trainClass={trainClass}
+            />
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
