@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
 import Button from "../common/Button";
 
 function Hero() {
+  const navigate = useNavigate();
+
   return (
     <section className="bg-slate-100">
       <div className="mx-auto flex max-w-7xl flex-col items-center px-8 py-20 text-center">
@@ -21,11 +25,11 @@ function Hero() {
         </p>
 
         <div className="mt-10 flex flex-wrap justify-center gap-4">
-          <Button>
+          <Button onClick={() => navigate("/search")}>
             Search Trains
           </Button>
 
-          <Button variant="secondary">
+          <Button onClick={() => navigate("/pnr")} variant="secondary">
             Check PNR
           </Button>
         </div>
